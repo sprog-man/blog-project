@@ -80,7 +80,9 @@ cp -r "$PROJECT_DIR/blog-content/"* /usr/local/nginx/html/
 
 # 设置正确的权限
 chmod -R 755 /usr/local/nginx/html/
-
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+firewall-cmd --list-ports
 # 验证nginx是否正常运行
 if systemctl is-active --quiet nginx; then
   echo "Nginx部署成功! 访问 http://你的服务器IP 查看页面"
