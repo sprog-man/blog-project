@@ -76,7 +76,7 @@ fi
 
 #部署页面
 echo "部署页面文件到nginx..."
-cp -r $PROJECT_DIR/blog-content/* /usr/local/nginx/html/
+cp -r "$PROJECT_DIR/blog-content/"* /usr/local/nginx/html/
 
 # 设置正确的权限
 chmod -R 755 /usr/local/nginx/html/
