@@ -3,11 +3,11 @@
 echo "===nginx部署脚本==="
 #确保用户在/root/blog-project目录下运行
 if [ ! -d "/root/blog-project" ]; then
-  echo "请确保在/root/blog-project目录下运行"
-  exit 1
+  echo "请确保在/root/blog-project目录下运行,正在将你跳转到该目录下"
+  #确保是在/root/blog-project目录下接着才允许运行下面的代码
+  cd /root/blog-project
 fi
-#确保是在/root/blog-project目录下接着才允许运行下面的代码
-cd /root/blog-project
+
 #检测该linxu系统是否安装过nginx
 if pgrep nginx >/dev/null; then
   echo "nginx已安装"
